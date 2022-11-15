@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/combi_graph"
+    app:startDestination="@id/combiListFragment">
+
+    <fragment
+        android:id="@+id/combiListFragment"
+        android:name="com.tufar.faultcode.view.CombiListFragment"
+        android:label="fragment_combi_list"
+        tools:layout="@layout/fragment_combi_list" >
+        <action
+            android:id="@+id/action_combiListFragment_to_combiModelListFragment"
+            app:destination="@id/combiModelListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/combiModelListFragment"
+        android:name="com.tufar.faultcode.view.CombiModelListFragment"
+        android:label="fragment_combi_model_list"
+        tools:layout="@layout/fragment_combi_model_list" >
+        <argument
+            android:name="combiBrandName"
+            app:argType="string"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_combiModelListFragment_to_combiFaultListFragment"
+            app:destination="@id/combiFaultListFragment" />
+        <action
+            android:id="@+id/action_combiModelListFragment_to_combiListFragment"
+            app:destination="@id/combiListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/combiFaultListFragment"
+        android:name="com.tufar.faultcode.view.CombiFaultListFragment"
+        android:label="fragment_combi_fault_list"
+        tools:layout="@layout/fragment_combi_fault_list" >
+        <argument
+            android:name="combiModelName"
+            app:argType="string"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_combiFaultListFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+        <action
+            android:id="@+id/action_combiFaultListFragment_to_combiModelListFragment"
+            app:destination="@id/combiModelListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.tufar.faultcode.view.DescriptionFragment"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" >
+        <argument
+            android:name="combiFaultName"
+            app:argType="string"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_descriptionFragment_to_combiFaultListFragment"
+            app:destination="@id/combiFaultListFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selectedCombi"
+            type="com.tufar.faultcode.model.Combi" />
+
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.DescriptionFragment">
+
+
+    <TextView
+        android:id="@+id/faultCodeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{selectedCombi.faultCode}"
+        android:textColor="#FF0000"
+        android:textSize="23sp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/descTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{selectedCombi.description}"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:gravity="left"
+        />
+
+</LinearLayout>
+</layout>

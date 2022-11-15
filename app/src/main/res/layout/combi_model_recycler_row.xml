@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="combi"
+            type="com.tufar.faultcode.model.Combi" />
+        <variable
+            name="listener"
+            type="com.tufar.faultcode.adapter.CombiClickListener" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:onClick="@{listener::combiClicked}">
+
+    <TextView
+        android:id="@+id/combi_uuid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@{String.valueOf(combi.uuid)}"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/combi_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@{combi.model}"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/modelRecyclerViewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{combi.model}"
+        android:textColor="#000000"
+        android:layout_margin="5dp"
+        android:textSize="23sp"
+        >
+    </TextView>
+</LinearLayout>
+</layout>
